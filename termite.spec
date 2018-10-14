@@ -7,6 +7,8 @@ Group:          User Interface/X
 License:        GPLv2
 URL:            https://github.com/thestinger/termite
 
+BuildRequires:  make
+BuildRequires:  gcc-c++
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  vte3-ng-devel >= 0.42
