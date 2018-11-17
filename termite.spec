@@ -1,5 +1,5 @@
 Name:           termite
-Version:        13
+Version:        14
 Release:        1%{?dist}
 Summary:        Terminal emulator based on GTK and VTE
 
@@ -11,10 +11,12 @@ BuildRequires:  make
 BuildRequires:  gcc-c++
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(gtk+-3.0)
-BuildRequires:  vte3-ng-devel >= 0.42
+BuildRequires:  vte3-ng-devel >= 0.52
 BuildRequires:  desktop-file-utils
 BuildRequires:  git
 
+Requires:       xdg-utils
+Requires:       desktop-file-utils
 
 %description
 Termite is a terminal emulator based on GTK and VTE. It's a terminal emulator
@@ -64,3 +66,7 @@ xdg-icon-resource forceupdate --theme hicolor &> /dev/null
 %{_mandir}/man1/%{name}.1.*
 %{_mandir}/man5/%{name}.config.5.*
 %{_sysconfdir}/xdg/termite/config
+
+%changelog
+* Sat Nov 17 2018 Sergey Korolev <korolev.srg@gmail.com> - 14-1
+- New release, fix dependencies
